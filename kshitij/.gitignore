@@ -22,7 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-public
-index.html
-App.jsx
-Apps.jsx
