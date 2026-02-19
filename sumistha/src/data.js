@@ -1,0 +1,148 @@
+const data = [
+  {
+    id: 1,
+    title: "2020 Toyota Camry SE",
+    price: "24,500",
+    location: "New York, NY",
+    image:
+      "https://images.unsplash.com/photo-1690349607381-a9d705537ed5?w=600&auto=format&fit=crop&q=60",
+    featured: true,
+    condition: "Excellent",
+    description: "Single owner, low mileage, well maintained.",
+    time: "3 hours ago",
+  },
+  {
+    id: 2,
+    title: "iPhone 14 Pro Max",
+    price: "899",
+    location: "Los Angeles, CA",
+    image:
+      "https://images.unsplash.com/photo-1710023038502-ba80a70a9f53?w=600&auto=format&fit=crop&q=60",
+    featured: true,
+    condition: "Like New",
+    description: "256GB, no scratches, original box available.",
+    time: "1 hour ago",
+  },
+  {
+    id: 3,
+    title: "Modern Apartment for Rent",
+    price: "2,200",
+    location: "Chicago, IL",
+    image:
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+    featured: true,
+    condition: "New",
+    description: "2BHK, furnished, close to metro station.",
+    time: "Today",
+  },
+  {
+    id: 4,
+    title: "Leather Sofa Set",
+    price: "650",
+    location: "Houston, TX",
+    image:
+      "https://images.unsplash.com/photo-1648657458755-74ceaf075f18?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGVhdGhlciUyMHNvZmF8ZW58MHx8MHx8fDA%3D",
+    featured: true,
+    condition: "Good",
+    description: "Comfortable leather sofa, minor usage marks.",
+    time: "Yesterday",
+  },
+  {
+    id: 5,
+    title: "Canon DSLR Camera",
+    price: "750",
+    location: "San Diego, CA",
+    image:
+      "https://images.unsplash.com/photo-1611846199060-56e17d92a7c4?w=600&auto=format&fit=crop&q=60",
+    featured: true,
+    condition: "Very Good",
+    description: "18–55mm lens included, rarely used.",
+    time: "2 days ago",
+  },
+  {
+    id: 6,
+    title: "Samsung 55-inch 4K Smart TV",
+    price: "550",
+    location: "Denver, CO",
+    image:
+      "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1",
+    featured: true,
+    condition: "Excellent",
+    description: "Crystal UHD, wall mount included.",
+    time: "4 hours ago",
+  },
+  {
+    id: 7,
+    title: "Executive Office Desk & Chair",
+    price: "350",
+    location: "Boston, MA",
+    image:
+      "https://images.unsplash.com/photo-1585634917202-6f03b28fc6d0",
+    featured: true,
+    condition: "Good",
+    description: "Wooden desk with ergonomic chair.",
+    time: "Yesterday",
+  },
+  {
+    id: 8,
+    title: "Gaming Mechanical Keyboard",
+    price: "120",
+    location: "Portland, OR",
+    image:
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3",
+    featured: true,
+    condition: "Like New",
+    description: "RGB backlit, blue switches.",
+    time: "5 hours ago",
+  },
+  {
+    id: 9,
+    title: "Bluetooth Noise Cancelling Headphones",
+    price: "180",
+    location: "Austin, TX",
+    image:
+      "https://images.unsplash.com/photo-1765279327575-bc9e453514dd?w=600&auto=format&fit=crop&q=60",
+    featured: true,
+    condition: "Very Good",
+    description: "Up to 30 hours battery life.",
+    time: "Today",
+  },
+  {
+    id: 10,
+    title: "Honda Civic LX 2019",
+    price: "18,900",
+    location: "Phoenix, AZ",
+    image:
+      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738",
+    featured: true,
+    condition: "Excellent",
+    description: "Petrol, automatic, no accidents.",
+    time: "2 days ago",
+  },
+  {
+    id: 11,
+    title: "Vintage Book Collection",
+    price: "150",
+    location: "Portland, OR",
+    image:
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794",
+    featured: true,
+    condition: "Good",
+    description: "Classic novels, well preserved.",
+    time: "3 days ago",
+  },
+  {
+    id: 12,
+    title: "Senior Software Engineer (Remote)",
+    price: "130",
+    location: "Remote",
+    image:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    featured: true,
+    condition: "Full-Time",
+    description: "5+ years experience, React & Node.js.",
+    time: "Posted today",
+  },
+];
+
+export default data;
