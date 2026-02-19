@@ -1,0 +1,11 @@
+/* container for the entire app */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* remove default Vite/React template styles */
+
+/* add any global app styles here */
