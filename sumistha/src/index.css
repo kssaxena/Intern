@@ -1,9 +1,34 @@
-@import "./styles/variables.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+
+
+
+/* THEME VARIABLES */
+:root {
+  --bg: #f7f7f7;
+  --dark: #222;
+  --gray: #777;
+  --primary: #0aa78f;
+}
+
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
   background-color: var(--bg);
   color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
 }
