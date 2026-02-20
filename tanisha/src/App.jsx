@@ -15,6 +15,7 @@ import {
 export default function App() {
 
 const [selectedProduct, setSelectedProduct] = useState(null);
+const [activeCategory, setActiveCategory] = useState("All Ads");
 
   const categories = [
     { name: "All Ads", icon: null },
@@ -191,13 +192,17 @@ const listings = [
   <h2 className="font-semibold mb-4">Browse Categories</h2>
 
   <div className="grid grid-cols-9 gap-3">
-    {categories.map((cat, i) => (
-      <div
-        key={i}
-        className={`border rounded-lg px-3 py-2 flex items-center justify-center gap-2 cursor-pointer hover:bg-gray-100 text-sm ${
-          i === 0 ? "bg-emerald-50 font-semibold border-emerald-500" : ""
-        }`}
-      >
+    {categories.map((cat) => (
+  <div
+    key={cat.name}
+    onClick={() => setActiveCategory(cat.name)}
+    className={`border rounded-lg px-3 py-2 flex items-center justify-center gap-2 cursor-pointer text-sm transition
+      ${
+        activeCategory === cat.name
+          ? "bg-emerald-50 border-emerald-500 text-emerald-600 font-semibold"
+          : "hover:bg-gray-100"
+      }`}
+  >
         {cat.icon && (
           <div className="text-base text-gray-600">
             {cat.icon}
