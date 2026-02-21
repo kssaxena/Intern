@@ -11,7 +11,7 @@ export default function CategoryBar({ selected, onSelect }) {
 
   return (
     <section className="px-10 py-6">
-      <div className="flex gap-3 flex-wrap items-center">
+      <div className="flex gap-3 flex-wrap justify-center">
 
         {mainCategories.map(({ label, icon: Icon }) => (
           <CategoryCard
