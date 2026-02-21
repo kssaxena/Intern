@@ -8,5 +8,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
-
-<h1 className="text-red-500 text-2xl">Tailwind Test</h1>

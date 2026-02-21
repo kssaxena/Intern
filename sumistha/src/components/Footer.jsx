@@ -1,55 +1,38 @@
-import React from "react";
-import "./Footer.css";
-import logo from "../assets/logo.svg";
-
+import React from 'react';
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-columns">
-        
-        {/* Brand Column */}
-        <div className="footer-col brand-col">
-          <div className="footer-brand">
-            <img src={logo} alt="Marketplace Logo" className="footer-logo" />
-            <h4>Marketplace</h4>
-          </div>
-          <p>Buy and sell anything locally. Safe, simple, and free.</p>
+    <footer className="border-t mt-20 py-10 text-sm text-gray-600">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-4 gap-6">
+        <div>
+          <h3 className="font-semibold mb-2">Marketplace</h3>
+          <p>Buy and sell anything locally.</p>
         </div>
 
-        {/* Quick Links */}
-        <div className="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li>Home</li>
-            <li>Post an Ad</li>
-            <li>My Ads</li>
-          </ul>
+        <div>
+          <h3 className="font-semibold mb-2">Quick Links</h3>
+          <p>Home</p>
+          <p>Post an Ad</p>
+          <p>My Ads</p>
         </div>
 
-        {/* Support */}
-        <div className="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li>Help Center</li>
-            <li>Safety Tips</li>
-            <li>Contact Us</li>
-          </ul>
+        <div>
+          <h3 className="font-semibold mb-2">Support</h3>
+          <p>Help Center</p>
+          <p>Safety Tips</p>
+          <p>Contact Us</p>
         </div>
 
-        {/* Legal */}
-        <div className="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li>Terms of Service</li>
-            <li>Privacy Policy</li>
-            <li>Cookie Policy</li>
-          </ul>
+        <div>
+          <h3 className="font-semibold mb-2">Legal</h3>
+          <p>Terms</p>
+          <p>Privacy</p>
+          <p>Cookies</p>
         </div>
       </div>
 
-      <div className="footer-bottom">
+      <p className="text-center mt-6 text-xs">
         © 2026 Marketplace. All rights reserved.
-      </div>
+      </p>
     </footer>
   );
 }

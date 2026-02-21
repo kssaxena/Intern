@@ -1,53 +1,72 @@
 import React from "react";
+import { useState } from "react";
+import { FiMoreHorizontal } from "react-icons/fi";
 import {
-  FiGrid,
-  FiTruck,
-  FiHome,
-  FiSmartphone,
-  FiShoppingBag,
-  FiArchive,
-  FiBriefcase,
-  FiHeart,
-  FiBookOpen,
-  FiMoreHorizontal,
-} from "react-icons/fi";
-import "./CategoryBar.css";
+  mainCategories,
+  moreCategories,
+} from "../constants/categories";
 
-const categories = [
-  { label: "All Ads", icon: <FiGrid /> },
-  { label: "Vehicles", icon: <FiTruck /> },
-  { label: "Property", icon: <FiHome /> },
-  { label: "Electronics", icon: <FiSmartphone /> },
-  { label: "Fashion", icon: <FiShoppingBag /> },
-  { label: "Furniture", icon: <FiArchive /> },
-  { label: "Jobs", icon: <FiBriefcase /> },
-  { label: "Hobbies", icon: <FiHeart /> },
-  { label: "Books", icon: <FiBookOpen /> },
-];
+export default function CategoryBar({ selected, onSelect }) {
+  const [showMore, setShowMore] = useState(false);
 
-export default function CategoryBar() {
   return (
-    <section className="category-section">
-      <h3 className="category-title">Browse Categories</h3>
+    <section className="px-10 py-6">
+      <div className="flex gap-3 flex-wrap items-center">
 
-      <div className="category-grid">
-        {categories.map((cat, index) => (
-          <div
-            key={index}
-            className={`category-card ${index === 0 ? "active" : ""}`}
-          >
-            <div className="category-icon">{cat.icon}</div>
-            <span className="category-label">{cat.label}</span>
-          </div>
+        {mainCategories.map(({ label, icon: Icon }) => (
+          <CategoryCard
+            key={label}
+            label={label}
+            Icon={Icon}
+            selected={selected}
+            onSelect={onSelect}
+          />
         ))}
 
-        <div className="category-card more">
-          <div className="category-icon">
-            <FiMoreHorizontal />
+        {/*More Button*/}
+        {!showMore && (
+          <div
+            onClick={() => setShowMore(true)}
+            className="w-[100px] h-[80px] rounded-xl border bg-white flex flex-col items-center justify-center cursor-pointer hover:border-[#0aa78f]"
+          >
+            <FiMoreHorizontal className="text-lg mb-1 text-gray-600" />
+            <span className="text-xs">More</span>
           </div>
-          <span className="category-label">More</span>
-        </div>
+        )}
+
+        {/* Extra categories side wise display */}
+        {showMore &&
+          moreCategories.map(({ label, icon: Icon }) => (
+            <CategoryCard
+              key={label}
+              label={label}
+              Icon={Icon}
+              selected={selected}
+              onSelect={onSelect}
+            />
+          ))}
       </div>
     </section>
+  );
+}
+
+function CategoryCard({ label, Icon, selected, onSelect }) {
+  return (
+    <div
+      onClick={() => onSelect(label)}
+      className={`w-[100px] h-[80px] rounded-xl border flex flex-col items-center justify-center cursor-pointer transition
+        ${
+          selected === label
+            ? "bg-[#e9faf7] border-[#0aa78f]"
+            : "bg-white hover:border-[#0aa78f]"
+        }`}
+    >
+      <Icon
+        className={`text-lg mb-1 ${
+          selected === label ? "text-[#0aa78f]" : "text-gray-600"
+        }`}
+      />
+      <span className="text-xs">{label}</span>
+    </div>
   );
 }
