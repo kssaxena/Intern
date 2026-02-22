@@ -1,55 +1,69 @@
 import React from "react";
-import "./Footer.css";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-columns">
-        
-        {/* Brand Column */}
-        <div className="footer-col brand-col">
-          <div className="footer-brand">
-            <img src={logo} alt="Marketplace Logo" className="footer-logo" />
-            <h4>Marketplace</h4>
-          </div>
-          <p>Buy and sell anything locally. Safe, simple, and free.</p>
+    <footer className="bg-white px-16 py-10 border-t">
+      <div className="flex justify-between flex-wrap gap-10">
+        {/* BRAND */}
+        <div>
+          <h4 className="font-semibold mb-2">Marketplace</h4>
+          <p className="text-sm text-gray-600">
+            Buy and sell anything locally.
+          </p>
         </div>
 
-        {/* Quick Links */}
-        <div className="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li>Home</li>
-            <li>Post an Ad</li>
-            <li>My Ads</li>
+        {/* QUICK LINKS */}
+        <div>
+          <h4 className="font-semibold mb-2">Quick Links</h4>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>
+              <Link to="/" className="hover:text-black">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/post-ad" className="hover:text-black">
+                Post an Ad
+              </Link>
+            </li>
+            <li>
+              <Link to="/" className="hover:text-black">
+                My Ads
+              </Link>
+            </li>
           </ul>
         </div>
 
-        {/* Support */}
-        <div className="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li>Help Center</li>
+        {/* SUPPORT */}
+        <div>
+          <h4 className="font-semibold mb-2">Support</h4>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <Link to="/help">Help Center</Link>
             <li>Safety Tips</li>
-            <li>Contact Us</li>
+            <li>
+            <Link to="/contact" className="hover:text-black">
+             Contact Us
+             </Link>
+            </li>
           </ul>
         </div>
 
-        {/* Legal */}
-        <div className="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li>Terms of Service</li>
-            <li>Privacy Policy</li>
-            <li>Cookie Policy</li>
+        {/* LEGAL */}
+        <div>
+          <h4 className="font-semibold mb-2">Legal</h4>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>Terms</li>
+            <li>Privacy</li>
+            <li>Cookies</li>
           </ul>
         </div>
       </div>
 
-      <div className="footer-bottom">
+      <p className="text-center text-xs text-gray-500 mt-10">
         © 2026 Marketplace. All rights reserved.
-      </div>
+      </p>
     </footer>
   );
 }
