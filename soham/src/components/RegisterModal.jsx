@@ -7,13 +7,19 @@ export default function RegisterModal({ onClose }) {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-white w-[450px] rounded-2xl shadow-lg p-8 relative">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white w-[450px] rounded-2xl shadow-lg p-8 relative"
+      >
 
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute right-5 top-5 text-gray-500 hover:text-gray-700"
+          className="absolute right-5 top-5 text-red-500 hover:text-gray-700"
         >
           <X size={22} />
         </button>

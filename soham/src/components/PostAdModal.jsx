@@ -28,13 +28,19 @@ function PostAdModal({ onClose, onSubmit }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center p-4 z-50">
-      <div className="bg-white w-full max-w-lg rounded-2xl p-6 shadow-xl relative">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center p-4 z-50"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white w-full max-w-lg rounded-2xl p-6 shadow-xl relative"
+      >
 
         {/* CLOSE BUTTON */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-black text-xl"
+          className="absolute top-4 right-4 text-red-500 hover:text-black text-xl"
         >
           ✕
         </button>
