@@ -3,7 +3,7 @@ import logo from "../assets/logo.svg";
 
 export default function Navbar() {
   return (
-    <nav className="h-17.5 px-10 flex items-center justify-between bg-white border-b relative z-50">
+    <nav className="h-17.5 px-10 flex items-center justify-between bg-white border-b relative z-40">
       {/* LEFT */}
       <Link to="/" className="flex items-center gap-2">
         <img src={logo} alt="Marketplace Logo" className="w-8 h-8" />
@@ -27,7 +27,7 @@ export default function Navbar() {
           About
         </Link>
 
-        <Link to="/login" className="text-sm hover:text-[#0aa78f]">
+        <Link to="/login" className="text-sm  hover:text-[#0aa78f]">
           Login
         </Link>
 

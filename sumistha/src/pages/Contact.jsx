@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Contact() {
   const [openFaq, setOpenFaq] = useState(0);
@@ -86,10 +87,14 @@ export default function Contact() {
           ))}
         </div>
 
+        {/* VISIT HELP CENTER LINK */}
         <div className="text-center mt-8">
-          <button className="text-sm border px-4 py-2 rounded-md hover:bg-gray-100">
+          <Link
+            to="/help"
+            className="inline-block border px-6 py-3 rounded-md text-sm hover:bg-gray-50"
+          >
             Visit Help Center →
-          </button>
+          </Link>
         </div>
       </div>
     </div>
