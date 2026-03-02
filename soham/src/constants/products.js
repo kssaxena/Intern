@@ -169,5 +169,4 @@ export const productsData = [
   description:
     "Elegant king-size bed frame with premium finish. Strong build and modern design. Barely used and well maintained."
 },
-p.category === selectedCategory
 ];

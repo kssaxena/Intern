@@ -1,16 +1,31 @@
 import { useState } from "react";
+import api from "../api";
 
 function LoginModal({ onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!email || !password) {
       alert("Please fill all fields!");
       return;
     }
-    alert("Logged in successfully!");
-    onClose();
+
+    try {
+      const res = await api.post("/users/login", {
+        email,
+        password
+      });
+
+      console.log("Login Success:", res.data);
+
+      alert("Login done!");
+      onClose();
+      
+    } catch (err) {
+      console.log(err);
+      alert("Login failed!");
+    }
   };
 
   return (
@@ -23,7 +38,6 @@ function LoginModal({ onClose }) {
         className="bg-white w-full max-w-md rounded-2xl p-6 shadow-xl relative"
       >
 
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-red-500 hover:text-black text-xl"

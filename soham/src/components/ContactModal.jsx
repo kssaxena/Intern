@@ -42,7 +42,7 @@ function ContactModal({ onClose }) {
           <div>
             <p className="text-sm text-gray-500">Address</p>
             <p className="font-medium text-gray-800">
-              DASH BHAVAN, Baleswar – 756043, Odisha
+              DASH BHAVAN , Baleswar – 756043, Odisha
             </p>
           </div>
 
