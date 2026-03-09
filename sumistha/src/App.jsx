@@ -10,6 +10,7 @@ import HelpCenter from "./pages/HelpCenter";
 import PostAd from "./pages/PostAd";
 import TermsConditions from "./pages/TermConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Account from "./pages/Account";
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/post-ad" element={<PostAd />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
 
       <Footer />

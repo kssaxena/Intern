@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function About() {
   return (
     <div className="bg-gray-50">
@@ -78,9 +79,9 @@ export default function About() {
           </p>
 
           <div className="flex justify-center gap-4">
-            <button className="bg-white text-[#0aa78f] px-6 py-2 rounded-md font-medium">
-              Get Started
-            </button>
+              <Link to="/" className="bg-white text-[#0aa78f] px-6 py-3 rounded-md font-medium">
+               Get Started
+             </Link>
             <button className="border border-white px-6 py-2 rounded-md">
               Learn More
             </button>
