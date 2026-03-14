@@ -6,7 +6,7 @@ import generateToken from "../utils/TokenGenerator.js";
 import bcrypt from "bcryptjs";
 
 export const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, phone, password } = req.body;
 
   const userExists = await User.findOne({ email });
 
@@ -17,6 +17,7 @@ export const registerUser = asyncHandler(async (req, res) => {
   const user = await User.create({
     name,
     email,
+    phone,
     password,
   });
 
@@ -25,6 +26,7 @@ export const registerUser = asyncHandler(async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
+      phone: user.phone,
       token: generateToken(user._id),
     })
   );

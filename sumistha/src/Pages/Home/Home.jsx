@@ -1,11 +1,11 @@
 import { useState } from "react";
-import CategoryBar from "../components/CategoryBar";
-import ProductCard from "../components/ProductCard";
-import { products } from "../constants/products";
+import CategoryBar from "../../Components/CategoryBar";
+import ProductCard from "../../Components/ProductCard";
+import { products } from "../../Constants/products";
 
 const limitedCategories = ["Jobs", "Fashion", "Hobbies"];
 
-export default function HomePage() {
+export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   let filteredProducts =

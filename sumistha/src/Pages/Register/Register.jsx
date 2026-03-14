@@ -7,9 +7,23 @@ export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
+  const [phoneError, setPhoneError] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const countryCodes = [
+    { code: "+1", label: "🇺🇸 +1" },
+    { code: "+91", label: "🇮🇳 +91" },
+    { code: "+44", label: "🇬🇧 +44" },
+    { code: "+61", label: "🇦🇺 +61" },
+    { code: "+81", label: "🇯🇵 +81" },
+    { code: "+49", label: "🇩🇪 +49" },
+    { code: "+33", label: "🇫🇷 +33" },
+    { code: "+86", label: "🇨🇳 +86" },
+    { code: "+7", label: "🇷🇺 +7" },
+    { code: "+55", label: "🇧🇷 +55" },
+  ];
   // PASSWORD STRENGTH
   const getStrength = () => {
     if (password.length === 0) return null;
@@ -31,7 +45,7 @@ export default function Register() {
         {
           name,
           email,
-          phone,
+phone: countryCode + phone,
           password
         }
       );
@@ -102,13 +116,34 @@ export default function Register() {
               Phone Number
             </label>
 
-            <input
-              type="tel"
-              placeholder="+91 98765 43210"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="w-full px-4 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#0aa78f]"
-            />
+            <div className="flex items-center gap-2">
+              <select
+                value={countryCode}
+                onChange={(e) => setCountryCode(e.target.value)}
+                className="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#0aa78f] bg-white"
+              >
+                {countryCodes.map((c) => (
+                  <option key={c.code} value={c.code}>
+                    {c.label}
+                  </option>
+                ))}
+              </select>
+
+              <input
+                type="tel"
+                placeholder="9876543210"
+                value={phone}
+                onChange={(e) => {
+                  const digits = e.target.value.replace(/\D/g, "");
+                  setPhone(digits);
+                  if (phoneError) setPhoneError("");
+                }}
+                className="flex-1 px-4 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#0aa78f]"
+              />
+            </div>
+            {phoneError && (
+              <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+            )}
           </div>
 
           {/* PASSWORD */}

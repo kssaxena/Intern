@@ -8,6 +8,7 @@ export default function Footer() {
       <div className="flex justify-between flex-wrap gap-10">
         {/* BRAND */}
         <div>
+          <img src={logo} alt="Marketplace" className="h-8 mb-2" />
           <h4 className="font-semibold mb-2">Marketplace</h4>
           <p className="text-sm text-gray-600">
             Buy and sell anything locally.

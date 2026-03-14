@@ -1,5 +1,23 @@
 import { Link } from "react-router-dom";
 
+const categories = [
+  { icon: "📚", title: "Getting Started", desc: "Learn the basics of using our platform" },
+  { icon: "💳", title: "Payments", desc: "Payment methods and billing information" },
+  { icon: "🔒", title: "Account Security", desc: "Keep your account safe and secure" },
+  { icon: "🚚", title: "Shipping", desc: "Shipping policies and tracking" },
+  { icon: "❓", title: "FAQ", desc: "Frequently asked questions" },
+  { icon: "📞", title: "Contact Support", desc: "Get in touch with our support team" },
+];
+
+const articles = [
+  "How to post an ad",
+  "Payment verification process",
+  "Account suspension and appeals",
+  "Shipping guidelines",
+  "Return and refund policy",
+  "Safety tips for buyers and sellers",
+];
+
 export default function HelpCenter() {
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -97,46 +115,3 @@ export default function HelpCenter() {
     </div>
   );
 }
-
-/* DATA */
-const categories = [
-  {
-    title: "Getting Started",
-    desc: "Learn the basics of using Marketplace to buy and sell locally.",
-    icon: "🚀",
-  },
-  {
-    title: "Buying",
-    desc: "Everything you need to know about finding and purchasing items.",
-    icon: "🛒",
-  },
-  {
-    title: "Selling",
-    desc: "How to create listings, manage offers, and close deals.",
-    icon: "🏷️",
-  },
-  {
-    title: "Account & Security",
-    desc: "Protect your account and manage passwords and settings.",
-    icon: "🔐",
-  },
-  {
-    title: "Safety Tips",
-    desc: "Best practices for staying safe when buying or selling.",
-    icon: "🛡️",
-  },
-  {
-    title: "Rules & Policies",
-    desc: "Important terms of service and prohibited items.",
-    icon: "📜",
-  },
-];
-
-const articles = [
-  "How to create an ad and optimize visibility",
-  "Avoiding common scams: a guide for buyers and sellers",
-  "Secure payment methods for in-person transactions",
-  "How to verify your profile to build trust",
-  "Using Marketplace delivery partner program",
-  "Reporting a user or a suspicious listing",
-];

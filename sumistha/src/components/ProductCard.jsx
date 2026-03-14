@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProductPopup from "./ProductPopup";
+import PopUpWrapper from "./PopUpWrapper";
 
 export default function ProductCard({ product }) {
   const [hovered, setHovered] = useState(false);
@@ -61,7 +61,7 @@ export default function ProductCard({ product }) {
 
       {/* CLICK POPUP */}
       {open && (
-        <ProductPopup product={product} onClose={() => setOpen(false)} />
+        <PopUpWrapper product={product} onClose={() => setOpen(false)} />
       )}
     </>
   );
