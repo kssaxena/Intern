@@ -6,6 +6,7 @@ import About from "./page/about/About";
 import Login from "./page/login/Login";
 import Register from "./page/register/Register";
 import PostAd from "./page/postad/Postad";
+import BuyNow from "./Pages/BuyNow/BuyNow";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/post-ad" element={<PostAd />} />
+        <Route path="/buy-now" element={<BuyNow />} />
       </Routes>
       <Footer />
     </div>

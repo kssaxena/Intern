@@ -1,0 +1,31 @@
+[33m6b78b63[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Added login, register, about and post ad pages
+[33mf05e298[m commit
+[33mdef95a2[m feat: add new pages and update routing for Terms, Privacy, and Post Ad features
+[33m0cb5c40[m commit
+[33m65c900d[m Merge branch 'main' of https://github.com/kssaxena/Intern
+[33m927c63c[m feat changes -the model for user is complete -user controller routes are written -APierror.js, ApiResponse.js, asyncHandler, imageKit.io.js, TokenGenerator are all the class written for usage for multiple controllers
+[33md3f771c[m feat changes -new package addition -initialization of index.js for commencement of database -controllers for user are written with initial usage
+[33mc9077e2[m feat update -backend initialization complete for interns
+[33m1b1235b[m feat: restructure components and add new pages for improved navigation and user experience
+[33mbf60727[m feat: add images for iPhone and watch, and update CSS variables in index.css
+[33m538af99[m Merge branch 'main' of https://github.com/kssaxena/Intern
+[33ma60bbe1[m feat changes -new component formation of footer and header for fixed rendering -new component Hero is complete for displaying on home location -A new component About.jsx is made for rendering and testing the routes initialized and considered in app.jsx and footer
+[33m5f43418[m feat changes -new package addition -deletion of sections from app.jsx -initializing the routes for App from main.jsx
+[33m60eac8a[m update
+[33m7db2f6a[m Tailwind CSS integrated, site working
+[33m3c84e00[m Merge branch 'main' of https://github.com/kssaxena/Intern
+[33m3356140[m Merge branch 'main' of https://github.com/kssaxena/Intern
+[33mee049aa[m bug erase
+[33mcbe2706[m Merge branch 'main' of https://github.com/kssaxena/Intern
+[33mefbbae5[m feat: initialize Sumistha project with React, Vite, and essential components
+[33m642d0a6[m Added tanisha project
+[33m334d83c[m bugfix
+[33mf1ecb8a[m popup training
+[33m7d38bf3[m node module uploaded by soham
+[33m7e294d5[m Converted soham from submodule to normal folder
+[33m41f1b0b[m Removed duplicate soham-dash folder
+[33m6407ffd[m Merge branch 'main' of https://github.com/kssaxena/Intern
+[33m9746637[m Added Soham Dash marketplace project
+[33m72ab241[m Fresh start
+[33m2479d78[m demo
+[33m35b3a38[m Intern intro

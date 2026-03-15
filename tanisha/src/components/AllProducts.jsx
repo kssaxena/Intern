@@ -1,34 +1,11 @@
-import React, { useState } from "react";
-import {
-  FaCar,
-  FaHome,
-  FaLaptop,
-  FaTshirt,
-  FaCouch,
-  FaBriefcase,
-  FaGamepad,
-  FaBook,
-  FaHeart,
-} from "react-icons/fa";
-import DemoPopUp from "../../DemoPopUp";
+import React from "react";
+import ProductCard from "../components/ProductCard";
 
-const Hero = () => {
-  const [activeCategory, setActiveCategory] = useState("All Ads");
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const categories = [
-    { name: "All Ads", icon: null },
-    { name: "Vehicles", icon: <FaCar /> },
-    { name: "Property", icon: <FaHome /> },
-    { name: "Electronics", icon: <FaLaptop /> },
-    { name: "Fashion", icon: <FaTshirt /> },
-    { name: "Furniture", icon: <FaCouch /> },
-    { name: "Jobs", icon: <FaBriefcase /> },
-    { name: "Hobbies", icon: <FaGamepad /> },
-    { name: "Books", icon: <FaBook /> },
-  ];
+const AllProducts = () => {
 
-const listings = [
-    {
+  // temporary sample data
+  const products = [
+     {
       id: 1,
       price: "$24,500",
       title: "2020 Toyota Camry SE - Low Mileage",
@@ -168,91 +145,20 @@ const listings = [
         "Exciting remote opportunity for an experienced Senior Software Engineer. Work on scalable systems, collaborate with cross-functional teams, and build innovative solutions. Competitive compensation and flexible work environment.",
     },
   ];
-  const filteredListings =
-  activeCategory === "All Ads"
-    ? listings
-    : listings.filter(
-        (item) =>
-          item.category.toLowerCase() === activeCategory.toLowerCase()
-      );
+
   return (
-    <div>
-      <section className="text-center py-12">
-        <h1 className="text-4xl font-bold">Buy & Sell Anything</h1>
-        <p className="text-gray-500 mt-2">
-          Find great deals near you or list your items for free
-        </p>
-      </section>
+    <div className="max-w-7xl mx-auto px-6 py-10">
 
-      {/* Categories */}
-      <section className="max-w-7xl mx-auto px-4">
-        <h2 className="font-semibold mb-4">Browse Categories</h2>
+      <h1 className="text-2xl font-bold mb-6">All Products</h1>
 
-        <div className="grid grid-cols-9 gap-3">
-          {categories.map((cat) => (
-            <div
-              key={cat.name}
-              onClick={() => setActiveCategory(cat.name)}
-              className={`border rounded-lg px-3 py-2 flex items-center justify-center gap-2 cursor-pointer text-sm transition
-          ${
-            activeCategory === cat.name
-              ? "bg-emerald-50 border-emerald-500 text-emerald-600 font-semibold"
-              : "hover:bg-gray-100"
-          }`}
-            >
-              {cat.icon && (
-                <div className="text-base text-gray-600">{cat.icon}</div>
-              )}
-              <span className="whitespace-nowrap">{cat.name}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
 
-      {/* Listings */}
-      <section className="max-w-7xl mx-auto px-4 mt-10">
-        <div className="flex justify-between mb-4">
-          <h2 className="font-semibold">Fresh Recommendations</h2>
-          <span className="text-sm text-gray-500">
-           {filteredListings.length} ads found
-          </span>
-        </div>
-
-        <div className="grid grid-cols-4 gap-6">
-          {filteredListings.map((item) => (
-            <div
-              key={item.id}
-              onClick={() => setSelectedProduct(item)}
-              className="cursor-pointer bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition relative"
-            >
-              {/* Heart Icon */}
-              <div className="absolute top-3 right-3 bg-white p-2 rounded-full shadow cursor-pointer">
-                <FaHeart className="text-gray-400 hover:text-red-500" />
-              </div>
-
-              <img
-                src={item.image}
-                alt={item.title}
-                className="h-48 w-full object-cover"
-              />
-
-              <div className="p-4">
-                <p className="text-emerald-600 font-bold">{item.price}</p>
-                <p className="font-semibold text-sm">{item.title}</p>
-                <p className="text-xs text-gray-500 mt-1">{item.location}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      {selectedProduct && (
-        <DemoPopUp
-          product={selectedProduct}
-          onClose={() => setSelectedProduct(null)}
-        />
-      )}
     </div>
   );
 };
 
-export default Hero;
+export default AllProducts;

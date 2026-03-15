@@ -1,0 +1,51 @@
+export const PRODUCT_CATEGORIES = [
+    {
+id: 1,
+    name: "Vehicles",
+    value: "vehicles" },
+  {
+    id: 2,name: "Electronics",
+    value: "electronics" },
+  {
+    id: 3,
+    name: "Property",
+    value: "property"},
+  {
+    id: 4,
+    name: "Furniture",
+    value: "furniture"},
+  {
+    id: 5,
+    name: "Electronics",
+    value: "electronics"},
+  {
+    id: 6,
+    name: "Electronics",
+    value: "electronics" },
+  {
+    id: 7,
+    name: "Fashion",
+    value: "fashion"},
+  {
+    id: 8,
+    name: "Vehicles",
+    value: "vehicles" },
+  {
+    id: 9,
+   name: "Furniture",
+    value: "furniture"},
+  {
+    id: 10,
+    name: "Books",
+    value: "books"},
+  {
+    id: 11,
+    name: "Electronics",
+    value: "electronics"
+},
+  {
+    id: 12,
+    name: "Jobs",
+    value: "jobs"
+ }
+];
