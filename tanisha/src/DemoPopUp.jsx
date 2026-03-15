@@ -1,8 +1,15 @@
 import React from "react";
 import { IoMdClose } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const DemoPopUp = ({ product, onClose }) => {
+  const navigate = useNavigate();
+
   if (!product) return null;
+
+  const handleBuyNow = () => {
+    navigate("/buy-now", { state: { product } });
+  };
 
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
@@ -39,9 +46,17 @@ const DemoPopUp = ({ product, onClose }) => {
         </p>
 
         {/* Price */}
-        <p className="text-emerald-600 font-bold text-lg">
+        <p className="text-emerald-600 font-bold text-lg mb-4">
           {product.price}
         </p>
+
+        {/* Buy Now Button */}
+        <button
+          onClick={handleBuyNow}
+          className="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition"
+        >
+          Buy Now
+        </button>
 
       </div>
     </div>
