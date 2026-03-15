@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
@@ -13,7 +12,8 @@ import PostAd from "./Pages/PostAd/PostAd";
 import TermsConditions from "./Pages/Terms_and_Conditions/Terms_and_Conditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import Account from "./Pages/Account/Account";
-
+import SafetyTips from "./Pages/SafetyTips/SafetyTips";
+import Search from "./Pages/Search/Search";
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -32,6 +32,8 @@ export default function App() {
           <Route path="/terms" element={<TermsConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/safety-tips" element={<SafetyTips />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </div>
 

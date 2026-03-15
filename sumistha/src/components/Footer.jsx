@@ -42,7 +42,9 @@ export default function Footer() {
           <h4 className="font-semibold mb-2">Support</h4>
           <ul className="text-sm text-gray-600 space-y-1">
             <Link to="/help">Help Center</Link>
-            <li>Safety Tips</li>
+            <li><Link to="/safety-tips" className="hover:text-black">
+             Safety Tips
+             </Link></li>
             <li>
             <Link to="/contact" className="hover:text-black">
              Contact Us

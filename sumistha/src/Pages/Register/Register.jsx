@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
 export default function Register() {
+
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,6 +26,7 @@ export default function Register() {
     { code: "+7", label: "🇷🇺 +7" },
     { code: "+55", label: "🇧🇷 +55" },
   ];
+
   // PASSWORD STRENGTH
   const getStrength = () => {
     if (password.length === 0) return null;
@@ -36,7 +39,13 @@ export default function Register() {
 
   // REGISTER FUNCTION
   const handleRegister = async (e) => {
+
     e.preventDefault();
+
+    if (phone.length < 6) {
+      setPhoneError("Enter a valid phone number");
+      return;
+    }
 
     try {
 
@@ -45,19 +54,27 @@ export default function Register() {
         {
           name,
           email,
-phone: countryCode + phone,
+          phone: countryCode + phone,
           password
         }
       );
 
       alert("Account created successfully!");
 
-      console.log(res.data);
+      const userData = res.data.data;
+
+      // Save user in localStorage
+      localStorage.setItem("user", JSON.stringify(userData));
+
+      // Notify Navbar
+      window.dispatchEvent(new Event("userLoggedIn"));
+
+      // Redirect to account page
+      navigate("/account");
 
     } catch (error) {
 
       console.log(error.response?.data);
-
       alert("Registration failed");
 
     }
@@ -80,7 +97,7 @@ phone: countryCode + phone,
         {/* FORM */}
         <form className="space-y-4" onSubmit={handleRegister}>
 
-          {/* FULL NAME */}
+          {/* NAME */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Full Name
@@ -91,6 +108,7 @@ phone: countryCode + phone,
               placeholder="John Doe"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
               className="w-full px-4 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#0aa78f]"
             />
           </div>
@@ -106,6 +124,7 @@ phone: countryCode + phone,
               placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
               className="w-full px-4 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#0aa78f]"
             />
           </div>
@@ -116,11 +135,12 @@ phone: countryCode + phone,
               Phone Number
             </label>
 
-            <div className="flex items-center gap-2">
+            <div className="flex gap-2">
+
               <select
                 value={countryCode}
                 onChange={(e) => setCountryCode(e.target.value)}
-                className="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#0aa78f] bg-white"
+                className="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#0aa78f]"
               >
                 {countryCodes.map((c) => (
                   <option key={c.code} value={c.code}>
@@ -136,13 +156,17 @@ phone: countryCode + phone,
                 onChange={(e) => {
                   const digits = e.target.value.replace(/\D/g, "");
                   setPhone(digits);
-                  if (phoneError) setPhoneError("");
+                  setPhoneError("");
                 }}
                 className="flex-1 px-4 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#0aa78f]"
               />
+
             </div>
+
             {phoneError && (
-              <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+              <p className="text-red-500 text-xs mt-1">
+                {phoneError}
+              </p>
             )}
           </div>
 
@@ -157,9 +181,10 @@ phone: countryCode + phone,
 
               <input
                 type={showPassword ? "text" : "password"}
+                placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
+                required
                 className="w-full px-4 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#0aa78f]"
               />
 
@@ -173,10 +198,11 @@ phone: countryCode + phone,
 
             </div>
 
-            {/* PASSWORD STRENGTH BAR */}
+            {/* PASSWORD STRENGTH */}
             {strength && (
               <>
                 <div className="mt-2 h-1 w-full bg-gray-200 rounded">
+
                   <div
                     className={`h-1 rounded transition-all ${
                       strength === "weak"
@@ -186,6 +212,7 @@ phone: countryCode + phone,
                         : "w-full bg-green-500"
                     }`}
                   />
+
                 </div>
 
                 <p className="text-xs mt-1 text-gray-500">
@@ -196,7 +223,7 @@ phone: countryCode + phone,
 
           </div>
 
-          {/* SUBMIT BUTTON */}
+          {/* SUBMIT */}
           <button
             type="submit"
             className="w-full bg-[#0aa78f] text-white py-2.5 rounded-md font-medium hover:bg-[#099b85] transition"
@@ -209,14 +236,20 @@ phone: countryCode + phone,
         {/* LOGIN LINK */}
         <p className="text-center text-sm text-gray-600 mt-6">
           Already have an account?{" "}
-          <Link to="/login" className="text-[#0aa78f] font-medium hover:underline">
+          <Link
+            to="/login"
+            className="text-[#0aa78f] font-medium hover:underline"
+          >
             Log In
           </Link>
         </p>
 
-        {/* BACK HOME */}
+        {/* BACK */}
         <div className="text-center mt-4">
-          <Link to="/" className="text-xs text-[#0aa78f] hover:underline">
+          <Link
+            to="/"
+            className="text-xs text-[#0aa78f] hover:underline"
+          >
             ← Back to Home
           </Link>
         </div>

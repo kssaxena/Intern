@@ -5,7 +5,10 @@ import asyncHandler from "../utils/asyncHandler.js";
 import generateToken from "../utils/TokenGenerator.js";
 import bcrypt from "bcryptjs";
 
+/* ================= REGISTER USER ================= */
+
 export const registerUser = asyncHandler(async (req, res) => {
+
   const { name, email, phone, password } = req.body;
 
   const userExists = await User.findOne({ email });
@@ -27,12 +30,18 @@ export const registerUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       phone: user.phone,
+      location: user.location,
       token: generateToken(user._id),
     })
   );
+
 });
 
+
+/* ================= LOGIN USER ================= */
+
 export const loginUser = asyncHandler(async (req, res) => {
+
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
@@ -52,7 +61,41 @@ export const loginUser = asyncHandler(async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
+      phone: user.phone,
+      location: user.location,
       token: generateToken(user._id),
     })
   );
+
+});
+
+
+/* ================= UPDATE USER PROFILE ================= */
+
+export const updateUser = asyncHandler(async (req, res) => {
+
+  const { name, phone, location } = req.body;
+
+  const user = await User.findById(req.user._id);
+
+  if (!user) {
+    throw new ApiError(404, "User not found");
+  }
+
+  user.name = name || user.name;
+  user.phone = phone || user.phone;
+  user.location = location || user.location;
+
+  const updatedUser = await user.save();
+
+  res.json(
+    new ApiResponse(200, {
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      phone: updatedUser.phone,
+      location: updatedUser.location,
+    })
+  );
+
 });
