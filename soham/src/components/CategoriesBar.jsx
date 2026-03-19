@@ -21,7 +21,7 @@ const categories = [
   { name: "Books", icon: <FaBook /> },
 ];
 
-// ⭐ FIX: Props accept karo
+
 function CategoriesBar({ selectedCategory, setSelectedCategory }) {
   return (
     <div className="w-full py-6 mt-10">

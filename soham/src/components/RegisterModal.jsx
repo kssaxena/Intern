@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import api from "../api";
+import api from "../Utility/api";
 
 export default function RegisterModal({ onClose }) {
   const [name, setName] = useState("");

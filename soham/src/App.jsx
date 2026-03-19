@@ -1,14 +1,14 @@
 import { useState } from "react";
-import DemoPopUp from "./components/demoPopUp";
-import ProductModal from "./components/ProductModal";
-import PostAdModal from "./components/PostAdModal.jsx";
-import LoginModal from "./components/LoginModal";
-import RegisterModal from "./components/RegisterModal";
-import CategoriesModal from "./components/CategoriesModal";
-import ContactModal from "./components/ContactModal";
-import AboutModal from "./components/AboutModal";
-import { productsData } from "./constants/products";
-import CategoriesBar from "./components/CategoriesBar";
+import DemoPopUp from "./Components/demoPopUp.jsx";
+import ProductModal from "./Components/ProductModal.jsx";
+import PostAdModal from "./Components/PostAdModal.jsx";
+import LoginModal from "./Components/LoginModal.jsx";
+import RegisterModal from "./Components/RegisterModal.jsx";
+import CategoriesModal from "./Components/CategoriesModal.jsx";
+import ContactModal from "./Components/ContactModal.jsx";
+import AboutModal from "./Components/AboutModal.jsx";
+import { productsData } from "./Constants/products.js";
+import CategoriesBar from "./Components/CategoriesBar.jsx";
 
 function App() {
   const [popup, setShowPopup] = useState(false);

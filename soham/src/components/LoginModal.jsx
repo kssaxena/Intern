@@ -1,5 +1,5 @@
 import { useState } from "react";
-import api from "../api";
+import api from "../Utility/api";
 
 function LoginModal({ onClose }) {
   const [email, setEmail] = useState("");
